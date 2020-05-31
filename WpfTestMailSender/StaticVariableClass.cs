@@ -1,6 +1,6 @@
 ﻿
 
-namespace MailSender
+namespace WpfTestMailSender
 {
 	public static class StaticVariableClass
 	{
