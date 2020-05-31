@@ -46,7 +46,7 @@ namespace WpfTestMailSender
 					}
 				}
 			}
-			MessageBox.Show("Работа завершена.")
+			MessageBox.Show("Работа завершена.");
 		}
 	}
 }
