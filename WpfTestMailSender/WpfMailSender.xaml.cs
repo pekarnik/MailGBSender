@@ -22,7 +22,7 @@ namespace WpfTestMailSender
 			strPassword = passwordBox.Password;
 
 			EmailSendServiceClass emailSender = new EmailSendServiceClass(StaticVariableClass.senderMail, strPassword, mail,
-				"Привет из C#", "Hello, world!", false, StaticVariableClass.SmtpServer, StaticVariableClass.SmtpPort,
+				subjectBox.Text, mailBox.Text, false, StaticVariableClass.SmtpServer, StaticVariableClass.SmtpPort,
 				true, new SendEndWindow(), new SendErrorWindow());
 			emailSender.Send();
 		}
