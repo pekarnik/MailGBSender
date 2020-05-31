@@ -3,6 +3,7 @@ using System.Windows;
 using System.Net;
 using System.Net.Mail;
 using System.Collections.Generic;
+using MailSender;
 
 namespace WpfTestMailSender
 {
@@ -29,10 +30,11 @@ namespace WpfTestMailSender
 					mm.Body = "Hello, world!";
 					mm.IsBodyHtml = false;
 
-					using (SmtpClient sc = new SmtpClient("smtp.yandex.ru", 25))
+					using (SmtpClient sc = new SmtpClient(StaticVariableClass.SmtpServer, 
+						StaticVariableClass.SmtpPort))
 					{
 						sc.EnableSsl = true;
-						sc.Credentials = new NetworkCredential("pekarnik11@yandex.ru",
+						sc.Credentials = new NetworkCredential(StaticVariableClass.senderMail,
 							strPassword);
 						try
 						{
