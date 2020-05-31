@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfGBMailSender", "WpfGBMailSender.csproj", "{7B2D5454-DB93-4FFA-8B25-8A7D66252BE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "..\TestConsole\TestConsole.csproj", "{424F814A-1029-41AF-9F2D-D7931D053452}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B2D5454-DB93-4FFA-8B25-8A7D66252BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B2D5454-DB93-4FFA-8B25-8A7D66252BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B2D5454-DB93-4FFA-8B25-8A7D66252BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B2D5454-DB93-4FFA-8B25-8A7D66252BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{424F814A-1029-41AF-9F2D-D7931D053452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{424F814A-1029-41AF-9F2D-D7931D053452}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{424F814A-1029-41AF-9F2D-D7931D053452}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{424F814A-1029-41AF-9F2D-D7931D053452}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8D37B47-49A9-4204-A4FE-5493CF374010}
+	EndGlobalSection
+EndGlobal
