@@ -88,6 +88,7 @@
                     <Button x:Name="btnSendImmediately" HorizontalAlignment="Left" Margin="0,226,0,0" VerticalAlignment="Top" Width="179">
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
+                                <Image Source="Images/SendNow.png" Width="16" Height="16" />
                                 <TextBlock Margin="3,0,0,0" Text="Send immediately" VerticalAlignment="Center" />
                             </StackPanel>
                         </Button.Content>
@@ -96,7 +97,15 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Mail's editor">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <RichTextBox>
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text="RichTextBox"/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                </Grid>
             </TabItem>
             <TabItem Header="Statistics ">
                 <Grid Background="#FFE5E5E5"/>

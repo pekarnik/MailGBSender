@@ -23,7 +23,11 @@ namespace MailSender
 		public WpfMailSender()
 		{
 			InitializeComponent();
+			cbSenderSelect.ItemsSource = VariablesClass.Senders;
+			cbSenderSelect.DisplayMemberPath = "Key";
+			cbSenderSelect.SelectedValuePath = "Value";
 		}
+
 
 		private void miClose_Click(object sender, RoutedEventArgs e)
 		{

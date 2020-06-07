@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PasswordClass.cs" />
     <Compile Include="SchedulerClass.cs" />
     <Page Include="WpfMailSender.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -67,6 +68,7 @@
     <Compile Include="AppConfigClass.cs" />
     <Compile Include="DBClass.cs" />
     <Compile Include="EmailSendServiceClass.cs" />
+    <Compile Include="VariablesClass.cs" />
     <Compile Include="WpfMailSender.xaml.cs">
       <DependentUpon>WpfMailSender.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -112,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SendNow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
