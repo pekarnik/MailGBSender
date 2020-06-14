@@ -13,6 +13,11 @@ namespace MailSender
 			get { return _dicSenders; }
 		}
 		private static Dictionary<string, string> _dicSenders;
+		public static Dictionary<string,int> SmtpServers
+		{
+			get { return _smtpServers; }
+		}
+		private static Dictionary<string, int> _smtpServers;
 	}
 
 }

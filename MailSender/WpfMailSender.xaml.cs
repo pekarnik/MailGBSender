@@ -26,6 +26,9 @@ namespace MailSender
 			cbSenderSelect.ItemsSource = VariablesClass.Senders;
 			cbSenderSelect.DisplayMemberPath = "Key";
 			cbSenderSelect.SelectedValuePath = "Value";
+			cbSmtpSelect.ItemsSource = VariablesClass.SmtpServers;
+			cbSmtpSelect.DisplayMemberPath = "Key";
+			cbSmtpSelect.SelectedValuePath = "Value";
 
 			DBClass db = new DBClass();
 			dgEmails.ItemsSource = db.Emails;
@@ -45,8 +48,16 @@ namespace MailSender
 
 		private void btnSendAtOnce_Click(object sender, RoutedEventArgs e)
 		{
+			textBoxSend.SelectAll();
+			if (textBoxSend.Selection.ToString().Length==0)
+			{
+				MessageBox.Show("Text is empty!");
+				tabControl.SelectedIndex = 2;
+			}
 			string strLogin = cbSenderSelect.Text;
 			string strPassword = cbSenderSelect.SelectedValue.ToString();
+			string strSmtp = cbSmtpSelect.Text;
+			int.TryParse(cbSmtpSelect.SelectedValue.ToString(), out int iSmtp);
 			if(string.IsNullOrEmpty(strLogin))
 			{
 				MessageBox.Show("Выберите отправителя");
@@ -57,7 +68,7 @@ namespace MailSender
 				MessageBox.Show("Укажите пароль отправителя");
 				return;
 			}
-			EmailSendServiceClass emailSender = new EmailSendServiceClass(strLogin, strPassword);
+			EmailSendServiceClass emailSender = new EmailSendServiceClass(strLogin, strPassword,strSmtp,iSmtp);
 			emailSender.SendMails((IQueryable<Email>)dgEmails.ItemsSource);
 		}
 
@@ -65,7 +76,9 @@ namespace MailSender
 		{
 			SchedulerClass sc = new SchedulerClass();
 			TimeSpan tsSendTime = sc.GetSendTime(tbTimePicker.Text);
-			if(tsSendTime == new TimeSpan())
+			string strSmtp = cbSmtpSelect.Text;
+			int.TryParse(cbSmtpSelect.SelectedValue.ToString(), out int iSmtp);
+			if (tsSendTime == new TimeSpan())
 			{
 				MessageBox.Show("Некорректный формат даты");
 				return;
@@ -79,7 +92,7 @@ namespace MailSender
 			}
 			EmailSendServiceClass emailSender = new
 				EmailSendServiceClass(cbSenderSelect.Text,
-				cbSenderSelect.SelectedValue.ToString());
+				cbSenderSelect.SelectedValue.ToString(), strSmtp, iSmtp);
 			sc.SendEmails(dtSendDateTime, emailSender,
 				(IQueryable<Email>)dgEmails.ItemsSource);
 		}

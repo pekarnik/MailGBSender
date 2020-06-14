@@ -1,9 +1,10 @@
-﻿<Window x:Class="MailSender.WpfMailSender"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailSender"
+        xmlns:TabSwitcher="clr-namespace:TabSwitcher;assembly=TabSwitcher" x:Class="MailSender.WpfMailSender"
         mc:Ignorable="d"
         Title="MainWindow" Height="351.624" Width="759.686">
     <DockPanel LastChildFill="True" Margin="0">
@@ -20,8 +21,7 @@
                     <ToolBarTray Width="auto" Height="65" VerticalAlignment="Top">
                         <ToolBar x:Name="tbSender" Width="auto" Height="30">
                             <Label x:Name="ISender" Content="Choose sender" Height="25" Width="130"/>
-                            <ComboBox x:Name="cbSenderSelect" Width="270" Height="25" SelectedIndex="0" ToolTip="Choose sender's email">
-                            </ComboBox>
+                            <ComboBox x:Name="cbSenderSelect" Width="270" Height="25" SelectedIndex="0" ToolTip="Choose sender's email"/>
                             <Button x:Name="btnAddSender" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="25" Height="25" ToolTip="Add">
                                 <Image Source="Images/add.png" HorizontalAlignment="Right"   />
                             </Button>
@@ -48,11 +48,8 @@
                             </Button>
                         </ToolBar>
 
-                        <ToolBar x:Name="tbPlanner" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="230" Band="0" BandIndex="1" >
-                            <Label x:Name="lPlanner" Content="Go to scheduler" Height="25" Width="Auto"/>
-                            <Button x:Name="btnClock" Width="25" Height="25" ToolTip="Перейти в планировщик" Click="btnClock_Click">
-                                <Image Source="Images\clock.png"/>
-                            </Button>
+                        <ToolBar x:Name="tbPlanner" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="260" Band="0" BandIndex="1" >
+                            <TabSwitcher:TabSwitcherControl x:Name="tscTabSwitcher" Margin="0,0,0,-5" IsHideBtnPrevious="True"  />
                         </ToolBar>
 
                         <ToolBar x:Name="tbAddressee" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="230" Band="1" BandIndex="1" >
@@ -73,30 +70,31 @@
             </TabItem>
             <TabItem x:Name="tabPlanner" Header="Scheduler">
                 <Grid Background="#FFE5E5E5">
-                    <Calendar x:Name="cldSchedulDateTimes" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionMode="MultipleRange"/>
-                    <TextBox x:Name="tbTimePicker" HorizontalAlignment="Left" Height="23" Margin="0,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="179"/>
-                    <Button x:Name="btnSend"  HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top" Width="179" RenderTransformOrigin="-1.12,-0.727" Height="25" Click="btnSend_Click">
-                        <Button.Content>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="Images/clock.png" Width="16" Height="16" />
-                                <TextBlock Margin="3,0,0,0" Text="Send planned" VerticalAlignment="Center" />
-                            </StackPanel>
-                        </Button.Content>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="79*"/>
+                        <ColumnDefinition Width="667*"/>
+                    </Grid.ColumnDefinitions>
+                    <Calendar x:Name="cldSchedulDateTimes" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionMode="MultipleRange" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbTimePicker" HorizontalAlignment="Left" Height="23" Margin="0,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="179" Grid.ColumnSpan="2"/>
+                    
+                    <Button x:Name="btnSend"  HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top" Width="179" RenderTransformOrigin="-1.12,-0.727" Height="25" Click="btnSend_Click" Grid.ColumnSpan="2">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Images/clock.png" Width="16" Height="16" />
+                            <TextBlock Margin="3,0,0,0" Text="Send planned" VerticalAlignment="Center" />
+                        </StackPanel>
                     </Button>
-                    <Button x:Name="btnSendAtOnce" HorizontalAlignment="Left" Margin="0,226,0,0" VerticalAlignment="Top" Width="179" Click="btnSendAtOnce_Click">
-                        <Button.Content>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="Images/SendNow.png" Width="16" Height="16" />
-                                <TextBlock Margin="3,0,0,0" Text="Send immediately" VerticalAlignment="Center" />
-                            </StackPanel>
-                        </Button.Content>
+                    <Button x:Name="btnSendAtOnce" HorizontalAlignment="Left" Margin="0,226,0,0" VerticalAlignment="Top" Width="179" Click="btnSendAtOnce_Click" Grid.ColumnSpan="2">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Images/SendNow.png" Width="16" Height="16" />
+                            <TextBlock Margin="3,0,0,0" Text="Send immediately" VerticalAlignment="Center" />
+                        </StackPanel>
                     </Button>
 
                 </Grid>
             </TabItem>
             <TabItem Header="Mail's editor">
                 <Grid Background="#FFE5E5E5">
-                    <RichTextBox>
+                    <RichTextBox x:Name="textBoxSend">
                         <FlowDocument>
                             <Paragraph>
                                 <Run Text="RichTextBox"/>
@@ -109,6 +107,7 @@
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>
+        <Canvas Height="190" VerticalAlignment="Top" Width="100"/>
     </DockPanel>
 
 
