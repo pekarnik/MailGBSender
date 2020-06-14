@@ -16,13 +16,11 @@
             <TabItem Header="Creating a mailing group">
 
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid Margin="0,65,0,0" />
+                    <DataGrid x:Name="dgEmails" Margin="0,65,0,0" />
                     <ToolBarTray Width="auto" Height="65" VerticalAlignment="Top">
                         <ToolBar x:Name="tbSender" Width="auto" Height="30">
                             <Label x:Name="ISender" Content="Choose sender" Height="25" Width="130"/>
                             <ComboBox x:Name="cbSenderSelect" Width="270" Height="25" SelectedIndex="0" ToolTip="Choose sender's email">
-                                <ComboBoxItem Content="trueSilver001@yandex.ru"/>
-                                <ComboBoxItem Content="trueSilver002@yandex.ru"/>
                             </ComboBox>
                             <Button x:Name="btnAddSender" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="25" Height="25" ToolTip="Add">
                                 <Image Source="Images/add.png" HorizontalAlignment="Right"   />
@@ -77,7 +75,7 @@
                 <Grid Background="#FFE5E5E5">
                     <Calendar x:Name="cldSchedulDateTimes" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionMode="MultipleRange"/>
                     <TextBox x:Name="tbTimePicker" HorizontalAlignment="Left" Height="23" Margin="0,168,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="179"/>
-                    <Button x:Name="btnSend"  HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top" Width="179" RenderTransformOrigin="-1.12,-0.727" Click="btnSend_Click" Height="25">
+                    <Button x:Name="btnSend"  HorizontalAlignment="Left" Margin="0,196,0,0" VerticalAlignment="Top" Width="179" RenderTransformOrigin="-1.12,-0.727" Height="25" Click="btnSend_Click">
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="Images/clock.png" Width="16" Height="16" />
@@ -85,7 +83,7 @@
                             </StackPanel>
                         </Button.Content>
                     </Button>
-                    <Button x:Name="btnSendImmediately" HorizontalAlignment="Left" Margin="0,226,0,0" VerticalAlignment="Top" Width="179">
+                    <Button x:Name="btnSendAtOnce" HorizontalAlignment="Left" Margin="0,226,0,0" VerticalAlignment="Top" Width="179" Click="btnSendAtOnce_Click">
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="Images/SendNow.png" Width="16" Height="16" />

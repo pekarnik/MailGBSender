@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace MailSender
 {
-	class DBClass
+	public class DBClass
 	{
+		private EmailsDataContext emails = new EmailsDataContext();
+		public IQueryable<Email> Emails
+		{
+			get
+			{
+				return from c in emails.Email select c;
+			}
+		}
 	}
 }
