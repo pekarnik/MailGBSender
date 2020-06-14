@@ -44,7 +44,7 @@ namespace MailSender
 				}
 				catch(Exception ex)
 				{
-					MessageBox.Show("Невозможно отправить письмо " + ex.ToString());
+					System.Windows.Forms.MessageBox.Show("Невозможно отправить письмо " + ex.ToString());
 				}
 			}
 		}

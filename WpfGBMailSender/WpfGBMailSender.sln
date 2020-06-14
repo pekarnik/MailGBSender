@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTestMailSender", "..\Wpf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender", "..\MailSender\MailSender.csproj", "{01D7952A-8A76-476D-912E-3630DF60B9BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodePasswordDLL", "CodePasswordDLL\CodePasswordDLL.csproj", "{4F0F2B80-D979-4EA0-A4D0-FC23D4FF521C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabSwitcher", "TabSwitcher\TabSwitcher.csproj", "{48E8C6A7-B98F-4C74-8D4B-03BE6F1E6FF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{01D7952A-8A76-476D-912E-3630DF60B9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01D7952A-8A76-476D-912E-3630DF60B9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01D7952A-8A76-476D-912E-3630DF60B9BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F0F2B80-D979-4EA0-A4D0-FC23D4FF521C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F0F2B80-D979-4EA0-A4D0-FC23D4FF521C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F0F2B80-D979-4EA0-A4D0-FC23D4FF521C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F0F2B80-D979-4EA0-A4D0-FC23D4FF521C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E8C6A7-B98F-4C74-8D4B-03BE6F1E6FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E8C6A7-B98F-4C74-8D4B-03BE6F1E6FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E8C6A7-B98F-4C74-8D4B-03BE6F1E6FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E8C6A7-B98F-4C74-8D4B-03BE6F1E6FF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
